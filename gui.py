@@ -81,10 +81,8 @@ class Ui_MainWindow(object):
             self.error_output.setText('List is empty!')
         else:
             clicked = self.list_widget.currentRow()
-            if clicked == False:
-                self.list_widget.takeItem(clicked)
-            else:
-                self.error_output.setText('Please select a task from the list!')
+            self.list_widget.takeItem(clicked)
+
 
     #Clears entire list
     def clear_list(self):
