@@ -65,6 +65,7 @@ class Ui_MainWindow(object):
         self.clear_button.setText(_translate("MainWindow", "Clear List"))
 
     #Add task to list
+    #Couldn't figure out how to not allow user to enter a task that is already in the list widget
     def add_task(self):
         self.error_output.setText('')
         task = self.input_text.text().lower()
@@ -75,6 +76,7 @@ class Ui_MainWindow(object):
         self.input_text.setText('')
 
     #Deletes selected task from list
+    #Need to figure out an exception or if/else for no task selected
     def delete_task(self):
         self.error_output.setText('')
         if self.list_widget.count() == 0:
@@ -82,6 +84,7 @@ class Ui_MainWindow(object):
         else:
             clicked = self.list_widget.currentRow()
             self.list_widget.takeItem(clicked)
+
 
 
     #Clears entire list
